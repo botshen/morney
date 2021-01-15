@@ -34,7 +34,6 @@
       <p>Money.vue</p>
       <p>Money.vue</p>
       <p>Money.vue</p>
-      <p>Money.vue</p>
     </div>
     <Nav/>
   </div>
