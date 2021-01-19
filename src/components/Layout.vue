@@ -12,17 +12,16 @@ export default {
   name: 'Layout'
 };
 </script>
+
 <style lang="scss" scoped>
 .nav-wrapper {
-  border: 1px solid green;
-  display: flex; //使用flex布局
-  flex-direction: column; //竖着布局
-  height: 100vh; //高度就是100%
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .content {
-  border: 1px solid blue;
-  overflow: auto; //滚动条
-  flex-grow: 1; //让蓝色的区域尽量占满
+  overflow: auto;
+  flex-grow: 1;
 }
 </style>

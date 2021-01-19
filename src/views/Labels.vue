@@ -1,14 +1,11 @@
 <template>
-<layout>
-  Labels.vue
-</layout>
+  <Layout>
+    Labels.vue
+  </Layout>
 </template>
 
 <script lang="ts">
-
-
 export default {
   name: 'Labels',
-
 };
 </script>
