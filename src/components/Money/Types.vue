@@ -9,17 +9,18 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import {Component} from 'vue-property-decorator';
+import {Component, Prop} from 'vue-property-decorator';
 
 //@Component//help do some to make things convert to data...
-@Component({
-  props: {
-    propMessage: String
-  }
-})
+@Component
 export default class Types extends Vue {
   type = '-';//'-'表示支出'+'表示收入
-  helloMsg = 'Hello, ' + this.propMessage;
+
+  @Prop(Number) xxx: number | undefined;
+  //Prop 告诉 Vue xxx 不是 data 是 prop
+  //Number告诉Vue xxx 是个 number
+  // xxx 属性名
+  // number | undefined 就是xxx的类型
 
   selectType(type: string) { //type is only "+" or "-"
     if (type !== '-' && type !== '+') {
@@ -27,6 +28,15 @@ export default class Types extends Vue {
     }
     this.type = type;
   }
+
+  mounted() {
+    if (this.xxx === undefined) {
+      console.log('没有引入xxx');
+    } else {
+      console.log(this.xxx.toString());
+    }
+  }
+
 }
 // export default {
 //   name: 'Types',
