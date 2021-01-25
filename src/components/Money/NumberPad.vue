@@ -46,7 +46,7 @@ export default class NumberPad extends Vue {
 
   remove() {
     if (this.output.length === 1) {
-      this.output = 0;
+      this.output = '0';
     } else {
       this.output = this.output.slice(0, -1);
     }
