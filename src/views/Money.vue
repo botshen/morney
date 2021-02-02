@@ -1,5 +1,6 @@
 <template>
   <Layout class-prefix="layout">
+    {{ recordList }}
     <NumberPad :value.sync="record.amount" @submit="saveRecord"/>
     <Types :value.sync="record.type"/>
     <Notes @update:value="onUpdateNotes"/>
@@ -15,7 +16,11 @@ import Notes from '@/components/Money/Notes.vue';
 import Tags from '@/components/Money/Tags.vue';
 import {Component, Watch} from 'vue-property-decorator';
 
-const recordList: Record[] = JSON.parse(window.localStorage.getItem('recordList') || '[]');
+//const model = require('@/model.js').model;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const {model} = require('@/model.js');
+console.log(model);
+const recordList: Record[] = model.fetch();
 
 
 type Record = {
