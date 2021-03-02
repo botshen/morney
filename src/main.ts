@@ -15,6 +15,10 @@ Vue.component('Layout', Layout);
 Vue.component('Icon', Icon);
 
 window.tagList = tagListModel.fetch();
+window.findTag = (id: string) => {
+  return window.tagList.filter(t => t.id === id)[0];
+};
+
 window.createTag = (name: string) => {
   const message = tagListModel.create(name);
   if (message === 'duplicated') {
