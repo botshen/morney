@@ -2,8 +2,12 @@ import recordStore from '@/store/recordStore';
 import tagStore from '@/store/tagStore';
 
 const store = {
-  ...recordStore,
-  ...tagStore,
+    count: 0,
+    addCount() {
+        this.count += 1;
+    },
+    ...recordStore,
+    ...tagStore,
 };
 
 console.log(store);
