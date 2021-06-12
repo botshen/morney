@@ -23,7 +23,7 @@ new Vue({
 
 window.onload = function () {
   setTimeout(function () {
-    window.scroll(0, 10000);
+    window.scroll(0, 200);
   }, 0);
 
 };
